@@ -1,0 +1,65 @@
+-- Create the hospital database
+CREATE DATABASE hospital;
+
+-- Use the hospital database
+USE hospital;
+
+-- Create the patient table
+CREATE TABLE patient (
+  patient_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  address VARCHAR(100),
+  phone_number VARCHAR(20),
+  email VARCHAR(100)
+);
+
+-- Create the doctor table
+CREATE TABLE doctor (
+  doctor_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  address VARCHAR(100),
+  phone_number VARCHAR(20),
+  email VARCHAR(100),
+  specialty VARCHAR(50)
+);
+
+-- Create the appointment table
+CREATE TABLE appointment (
+  appointment_id INT PRIMARY KEY,
+  patient_id INT,
+  doctor_id INT,
+  appointment_date DATE,
+  appointment_time TIME,
+  notes VARCHAR(500),
+  FOREIGN KEY (patient_id) REFERENCES patient(patient_id),
+  FOREIGN KEY (doctor_id) REFERENCES doctor(doctor_id)
+);
+
+-- Create the prescription table
+CREATE TABLE prescription (
+  prescription_id INT PRIMARY KEY,
+  patient_id INT,
+  doctor_id INT,
+  medication VARCHAR(100),
+  dosage VARCHAR(50),
+  frequency VARCHAR(50),
+  start_date DATE,
+  end_date DATE,
+  lab_test VARCHAR(500),
+  FOREIGN KEY (patient_id) REFERENCES patient(patient_id),
+  FOREIGN KEY (doctor_id) REFERENCES doctor(doctor_id)
+);
+
+-- Create the lab test table
+CREATE TABLE lab_test (
+  lab_test_id INT PRIMARY KEY,
+  patient_id INT,
+  doctor_id INT,
+  test_name VARCHAR(100),
+  test_date DATE,
+  result VARCHAR(100),
+  FOREIGN KEY (patient_id) REFERENCES patient(patient_id),
+  FOREIGN KEY (doctor_id) REFERENCES doctor(doctor_id)
+);
