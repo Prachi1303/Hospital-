@@ -5,8 +5,8 @@ try:
     while not con:
         # Prompt user to enter login credentials
         print("\n*** *** *** *LOGIN TO DATABASE* *** *** *** \n")
-        username = input("Enter username: ")
-        password = input("Enter password: ")
+        username = input("Enter username: ") #username = prachi
+        password = input("Enter password: ") #password = 1303
         print("\n*** *** *** *** *** *** *** *** *** *** *** \n")
 
         # Connect to database using login credentials
