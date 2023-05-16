@@ -5,7 +5,6 @@ It stores the information about patients, doctors, appointments, and prescriptio
 #Prerequisites
 
 Before running the script, make sure you have the following prerequisites:
-
 Python installed on your system.
 
 pymysql library installed. You can install it using the command pip install pymysql.
@@ -41,6 +40,7 @@ Delete existing data: Delete a patient from the database.
 Exit: Close the script and end the database connection.
 
 #Note
+
 The code assumes that the MySQL server is running on localhost with the default port 3306. If your setup differs, you can modify the connection parameters in the code accordingly.
 
 The code handles incorrect login credentials by prompting the user to enter the correct ones.
