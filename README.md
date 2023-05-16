@@ -5,6 +5,7 @@ It stores the information about patients, doctors, appointments, and prescriptio
 #Prerequisites
 
 Before running the script, make sure you have the following prerequisites:
+
 Python installed on your system.
 
 pymysql library installed. You can install it using the command pip install pymysql.
